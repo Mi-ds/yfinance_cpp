@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: yfinance_cpp
+Description: High-performance C++ library for retrieving financial data from Yahoo Finance
+Version: 1.0.0
+URL: https://github.com/yourusername/yfinance_cpp
+
+Libs: -L${libdir} -lyfinance_cpp -lcurl
+Cflags: -I${includedir}
