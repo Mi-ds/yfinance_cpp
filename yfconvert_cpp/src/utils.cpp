@@ -106,6 +106,20 @@ namespace yfinance {
         return true;
     }
 
+    std::string Utils::days_to_period_string(int days) {
+        // Map days to appropriate period strings that Yahoo Finance API recognizes
+        if (days <= 1) return "1d";
+        if (days <= 5) return "5d";
+        if (days <= 30) return "1mo";
+        if (days <= 90) return "3mo";
+        if (days <= 180) return "6mo";
+        if (days <= 365) return "1y";
+        if (days <= 730) return "2y";  // Approx 2 years
+        if (days <= 1825) return "5y"; // Approx 5 years
+        if (days <= 3650) return "10y"; // Approx 10 years
+        return "max"; // For periods longer than 10 years, use max
+    }
+
     std::map<std::string, std::string> Utils::get_default_headers() {
         std::map<std::string, std::string> headers;
         headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";

@@ -24,7 +24,7 @@ namespace yfinance {
 
         // Fetch historical price data
         nlohmann::json history(
-            int period_days = 365,
+            int period_days = 365,  // Default to 1 year of data
             const std::string& interval = "1d",
             bool auto_adjust = true,
             bool back_adjust = false,

@@ -49,6 +49,9 @@ namespace yfinance {
         // Validate ticker symbol format
         static bool is_valid_ticker(const std::string& symbol);
 
+        // Convert days to appropriate period string for Yahoo Finance API
+        static std::string days_to_period_string(int days);
+
         // Get default headers for requests
         static std::map<std::string, std::string> get_default_headers();
     };

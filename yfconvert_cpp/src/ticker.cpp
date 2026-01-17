@@ -41,7 +41,7 @@ namespace yfinance {
 
         // Build parameters for API request
         std::map<std::string, std::string> params;
-        params["period"] = std::to_string(period_days) + "d";
+        params["period"] = Utils::days_to_period_string(period_days);
         params["interval"] = interval;
         params["events"] = "div,splits";
 
